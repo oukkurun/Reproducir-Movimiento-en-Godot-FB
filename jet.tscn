@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://c8l0in516gkss"]
+
+[ext_resource type="Script" path="res://Jet.gd" id="1_ilx2g"]
+[ext_resource type="Texture2D" uid="uid://c2b35pu4enuxy" path="res://icon.svg" id="2_w4omd"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pqe0h"]
+radius = 42.0
+height = 128.0
+
+[node name="Jet" type="CharacterBody2D"]
+script = ExtResource("1_ilx2g")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = -1.5708
+scale = Vector2(1, 0.664955)
+texture = ExtResource("2_w4omd")
+flip_v = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_pqe0h")
+
+[node name="duracion_jet" type="Timer" parent="."]
+process_callback = 0
+wait_time = 1.1
+one_shot = true
+
+[connection signal="timeout" from="duracion_jet" to="." method="_on_duracion_jet_timeout"]

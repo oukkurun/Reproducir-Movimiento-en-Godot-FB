@@ -1,0 +1,54 @@
+[gd_scene load_steps=4 format=3 uid="uid://db5hcskkays41"]
+
+[ext_resource type="PackedScene" uid="uid://c8l0in516gkss" path="res://jet.tscn" id="1_fb4sa"]
+[ext_resource type="Texture2D" uid="uid://c2b35pu4enuxy" path="res://icon.svg" id="2_2x51u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yirii"]
+size = Vector2(1386, 52)
+
+[node name="Mundo" type="Node2D"]
+
+[node name="Jet" parent="." instance=ExtResource("1_fb4sa")]
+position = Vector2(548, 213)
+
+[node name="Plataforma" type="StaticBody2D" parent="."]
+position = Vector2(570, 621)
+
+[node name="Sprite2D" type="Sprite2D" parent="Plataforma"]
+scale = Vector2(10.8125, 0.453125)
+texture = ExtResource("2_2x51u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataforma"]
+shape = SubResource("RectangleShape2D_yirii")
+
+[node name="Plataforma4" type="StaticBody2D" parent="."]
+position = Vector2(541, 27)
+
+[node name="Sprite2D" type="Sprite2D" parent="Plataforma4"]
+scale = Vector2(10.8125, 0.453125)
+texture = ExtResource("2_2x51u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataforma4"]
+shape = SubResource("RectangleShape2D_yirii")
+
+[node name="Plataforma2" type="StaticBody2D" parent="."]
+position = Vector2(30, 275)
+rotation = -1.5708
+
+[node name="Sprite2D" type="Sprite2D" parent="Plataforma2"]
+scale = Vector2(10.8125, 0.453125)
+texture = ExtResource("2_2x51u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataforma2"]
+shape = SubResource("RectangleShape2D_yirii")
+
+[node name="Plataforma3" type="StaticBody2D" parent="."]
+position = Vector2(1127, 275)
+rotation = -1.5708
+
+[node name="Sprite2D" type="Sprite2D" parent="Plataforma3"]
+scale = Vector2(10.8125, 0.453125)
+texture = ExtResource("2_2x51u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataforma3"]
+shape = SubResource("RectangleShape2D_yirii")
